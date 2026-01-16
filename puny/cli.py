@@ -89,6 +89,8 @@ def main():
             print(f"✗ Fehler: {e}")
 
     elif args.command == "add":
+        master = ask_master_password()
+
         name = input(t("entry_name")).strip()
         username = input(t("entry_username")).strip()
         password = getpass(t("entry_password"))
@@ -97,7 +99,8 @@ def main():
             add_entry(master, name, username, password)
             print(t("entry_saved", name=name))
         except Exception as e:
-            print(f"✗ Fehler: {e}")
+            print(f"{t('error_prefix')}{e}")
+
 
     elif args.command == "get":
         master = ask_master_password()
