@@ -22,6 +22,15 @@ Recommended method using pipx:
 ```bash
 pipx install git+https://github.com/Vaspyyy/puny-manager.git
 ```
+
+## Updating
+
+If installed via pipx:
+
+```bash
+pipx upgrade puny-manager
+```
+
 ## Usage
 Change language:
 ```bash
