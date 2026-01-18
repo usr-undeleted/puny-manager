@@ -1,4 +1,11 @@
-from .paths import get_lang_path
+from pathlib import Path
+import os
+
+APP_NAME = "puny-manager"
+
+def get_lang_path() -> Path:
+    base = Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config"))
+    return base / APP_NAME / "lang"
 
 STRINGS = {
     "en": {
