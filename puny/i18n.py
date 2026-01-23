@@ -188,9 +188,9 @@ STRINGS = {
         # edits
         "vault_updated": "Мастер-пароль обновлён.",
         "cmd_edit": "Редактировать запись",
-    "editing_entry": "Редактирование записи:",
-    "entry_updated": "Запись '{name}' обновлена.",
-    "leave_empty": "оставьте пустым, чтобы сохранить",
+        "editing_entry": "Редактирование записи:",
+        "entry_updated": "Запись '{name}' обновлена.",
+        "leave_empty": "оставьте пустым, чтобы сохранить",
 
 
         # argparse / help

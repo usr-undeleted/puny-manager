@@ -141,8 +141,6 @@ def main():
 
     except PunyError as e:
         print(t("error_prefix") + t(str(e)))
-    except PunyError as e:
-        print(t("error_prefix") + t(str(e)))
     except Exception as e:
         print(t("error_prefix") + str(e))
 
