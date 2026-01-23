@@ -63,3 +63,7 @@ Change master password:
 ```bash
 puny-manager passwd
 ```
+Edit an entry:
+```bash
+puny-manager edit <name>
+```

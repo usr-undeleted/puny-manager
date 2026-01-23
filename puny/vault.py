@@ -34,3 +34,10 @@ class Vault:
         self.entries = [e for e in self.entries if e.name != name]
         if len(self.entries) == before:
             raise PunyError("entry_not_found")
+
+    def update(self, name: str, new: Entry) -> None:
+        for i, e in enumerate(self.entries):
+            if e.name == name:
+                self.entries[i] = new
+                return
+        raise PunyError("entry_not_found")

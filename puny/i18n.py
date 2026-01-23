@@ -53,6 +53,10 @@ STRINGS = {
 
         # edits
         "vault_updated": "Master password updated.",
+        "cmd_edit": "Edit an entry",
+        "editing_entry": "Editing entry:",
+        "entry_updated": "Entry '{name}' updated.",
+        "leave_empty": "leave empty to keep",
 
         # argparse / help
         "cmd_init": "Initialize a new vault",
@@ -115,6 +119,11 @@ STRINGS = {
 
         # edits
         "vault_updated": "Master-Passwort aktualisiert.",
+        "cmd_edit": "Eintrag bearbeiten",
+        "editing_entry": "Bearbeite Eintrag:",
+        "entry_updated": "Eintrag '{name}' aktualisiert.",
+        "leave_empty": "leer lassen zum Behalten",
+
 
 
         # argparse / help
@@ -178,6 +187,11 @@ STRINGS = {
 
         # edits
         "vault_updated": "Мастер-пароль обновлён.",
+        "cmd_edit": "Редактировать запись",
+    "editing_entry": "Редактирование записи:",
+    "entry_updated": "Запись '{name}' обновлена.",
+    "leave_empty": "оставьте пустым, чтобы сохранить",
+
 
         # argparse / help
         "cmd_init": "Создать новое хранилище",

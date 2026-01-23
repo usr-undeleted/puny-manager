@@ -35,6 +35,9 @@ def main():
     lang = sp.add_parser("lang", help=t("cmd_lang"))
     lang.add_argument("lang", nargs="?", choices=["en", "de", "ru"])
 
+    e = sp.add_parser("edit", help=t("cmd_edit"))
+    e.add_argument("name", help=t("arg_name"))
+
     args = p.parse_args()
 
     try:
@@ -112,10 +115,36 @@ def main():
             save_vault(a, v)
             print(t("vault_updated"))
 
+        elif args.cmd == "edit":
+            m = getpass(t("master_password"))
+            v = load_vault(m)
+
+            old = smart_find(v.entries, args.name)
+            if not old:
+                raise PunyError("entry_not_found")
+
+            print(f"{t('editing_entry')} {old.name}")
+
+            username = input(f"{t('entry_username')} [{old.username}]: ").strip()
+            password = getpass(f"{t('entry_password')} ({t('leave_empty')}): ")
+            notes = input(f"{t('entry_notes')} [{old.notes}]: ").strip()
+
+            new = Entry(
+                    name=old.name,
+                    username=username or old.username,
+                    password=password or old.password,
+                    notes=notes or old.notes,
+            )
+            v.update(old.name, new)
+            save_vault(m, v)
+            print(t("entry_updated", name=old.name))
+
     except PunyError as e:
         print(t("error_prefix") + t(str(e)))
-    except Exception:
-        print(t("error_prefix") + t("vault_decrypt_failed"))
+    except PunyError as e:
+        print(t("error_prefix") + t(str(e)))
+    except Exception as e:
+        print(t("error_prefix") + str(e))
 
 if __name__ == "__main__":
     main()
