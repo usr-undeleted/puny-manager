@@ -25,8 +25,8 @@ STRINGS = {
 
         # init
         "password_mismatch": "Passwords do not match.",
-        "master_password_too_short": "Master password must be at least 12 characters.",
-        "master_password_requirements": "Master password must include upper, lower, digit, and symbol.",
+        "master_password_too_short": "Master password must be at least 4 characters.",
+#        "master_password_requirements": "Master password must include upper, lower, digit, and symbol.",
         "vault_created": "Vault created successfully.",
         "vault_exists": "Vault already exists.",
 
@@ -99,8 +99,8 @@ STRINGS = {
 
         # init
         "password_mismatch": "Passwörter stimmen nicht überein.",
-        "master_password_too_short": "Master-Passwort muss mindestens 12 Zeichen haben.",
-        "master_password_requirements": "Master-Passwort braucht Groß-/Kleinbuchstaben, Zahl und Symbol.",
+        "master_password_too_short": "Master-Passwort muss mindestens 4 Zeichen haben.",
+#        "master_password_requirements": "Master-Passwort braucht Groß-/Kleinbuchstaben, Zahl und Symbol.",
         "vault_created": "Vault erfolgreich erstellt.",
         "vault_exists": "Vault existiert bereits.",
 
@@ -173,8 +173,8 @@ STRINGS = {
 
         # init
         "password_mismatch": "Пароли не совпадают.",
-        "master_password_too_short": "Мастер-пароль должен быть не менее 12 символов.",
-        "master_password_requirements": "Мастер-пароль должен содержать регистр, цифру и символ.",
+        "master_password_too_short": "Мастер-пароль должен быть не менее 4 символов.",
+#        "master_password_requirements": "Мастер-пароль должен содержать регистр, цифру и символ.",
         "vault_created": "Хранилище успешно создано.",
         "vault_exists": "Хранилище уже существует.",
 

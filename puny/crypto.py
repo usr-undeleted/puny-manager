@@ -19,11 +19,12 @@ def derive_key(password: str, salt: bytes) -> bytes:
     kdf = Argon2id(
         salt=salt,
         length=ARGON2_HASH_LEN,
-        time_cost=ARGON2_TIME_COST,
+        iterations=ARGON2_TIME_COST,
         memory_cost=ARGON2_MEMORY_COST,
-        parallelism=ARGON2_PARALLELISM,
+        lanes=ARGON2_PARALLELISM,
     )
     return kdf.derive(password.encode())
+
 
 def derive_key_legacy(password: str, salt: bytes) -> bytes:
     kdf = PBKDF2HMAC(
