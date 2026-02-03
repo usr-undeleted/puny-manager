@@ -1,11 +1,19 @@
 import argparse
-import pyperclip
 from getpass import getpass
-from .storage import load_vault, save_vault, init_vault, lang_path, config_dir
+
+import pyperclip
+
+from .i18n import get_lang, t
+from .storage import config_dir, init_vault, lang_path, load_vault, save_vault
+from .util import (
+    check_master_password,
+    generate_password,
+    schedule_clipboard_clear,
+    smart_find,
+)
 from .vault import Entry, PunyError
-from .util import generate_password, smart_find, check_master_password, schedule_clipboard_clear
-from .i18n import t, get_lang
 from .version import get_version
+
 
 def main():
     p = argparse.ArgumentParser(prog="puny-manager")
@@ -55,11 +63,18 @@ def main():
             b = getpass(t("repeat_master_password"))
             if a != b:
                 raise PunyError("password_mismatch")
-            master_error = check_master_password(a)
-            if master_error:
-                raise PunyError(master_error)
+            err, warn = check_master_password(a)
+            if err:
+                raise PunyError(err)
+
+            if warn:
+                choice = input(t(warn)).strip().lower()
+                if choice != "y":
+                    return
+
             init_vault(a)
             print(t("vault_created"))
+
 
         elif args.cmd == "list":
             v = load_vault(getpass(t("master_password")))
@@ -125,11 +140,18 @@ def main():
             b = getpass(t("repeat_master_password"))
             if a != b:
                 raise PunyError("password_mismatch")
-            master_error = check_master_password(a)
-            if master_error:
-                raise PunyError(master_error)
+            err, warn = check_master_password(a)
+            if err:
+                raise PunyError(err)
+
+            if warn:
+                choice = input(t(warn)).strip().lower()
+                if choice != "y":
+                    return
+
             save_vault(a, v)
             print(t("vault_updated"))
+
 
         elif args.cmd == "edit":
             m = getpass(t("master_password"))
@@ -145,9 +167,7 @@ def main():
             password = getpass(f"{t('entry_password')} ({t('leave_empty')}): ")
             notes = input(f"{t('entry_notes')} [{old.notes}]: ").strip()
             url = input(f"{t('entry_url')} [{old.url}]: ").strip()
-            tags_text = input(
-                f"{t('entry_tags')} [{', '.join(old.tags)}]: "
-            ).strip()
+            tags_text = input(f"{t('entry_tags')} [{', '.join(old.tags)}]: ").strip()
             tags = [t.strip() for t in tags_text.split(",") if t.strip()]
 
             new = Entry(
@@ -166,6 +186,7 @@ def main():
         print(t("error_prefix") + t(str(e)))
     except Exception as e:
         print(t("error_prefix") + str(e))
+
 
 if __name__ == "__main__":
     main()
