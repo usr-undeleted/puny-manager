@@ -193,6 +193,68 @@ STRINGS = {
         # lang
         "lang_set": "Язык установлен на {lang}",
     },
+    "pt": {
+        # generic
+        "error_prefix": "✗ Erro: ",
+        "success_prefix": "✓ ",
+        # prompts
+        "master_password": "Senha mestre: ",
+        "set_master_password": "Definir senha mestre: ",
+        "repeat_master_password": "Repetir senha mestre: ",
+        "entry_name": "Nome: ",
+        "entry_username": "Usuário / Email: ",
+        "entry_password": "Senha: ",
+        "entry_url": "URL (opcional): ",
+        "entry_tags": "Identificadores (separado por vírgulas, opcional): ",
+        # init
+        "password_mismatch": "Senhas não combinam.",
+        "master_password_too_short": "Senha mestre deve ter pelo menos 4 caracteres.",
+        "vault_created": "Cofre criado com sucesso.",
+        "weak_master_password": "É recomendado usar pelo menos 8 caracteres e usar caracteres especiais.\n"
+        "Continuar mesmo assim? (y/n): ", # Proceed anyway?
+        "vault_exists": "Cofre já existe.",
+        # list
+        "no_entries": "Nenhuma entrada encontrada.",
+        "stored_entries": "Entradas guardadas:",
+        # add
+        "entry_saved": "Entrada '{name}' salva.",
+        "entry_notes": "Notas (opcional): ",
+        # get
+        "entry_not_found": "Entrada '{name}' não encontrada.",
+        "password_copied": "Senha copiada para área de transferência.",
+        "clipboard_clearing": "Área de transferência será limpa em {seconds} segundos.",
+        "clipboard_unavailable": "Nenhuma área de transferência encontrada. Instale wl-clipboard (Wayland) ou xclip (X11).",
+        # remove
+        "entry_removed": "Entrada '{name}' removida.",
+        # generator
+        "password_length_error": "Largura da senha deve ser de pelo menos 8 caracteres.",
+        # vault / storage errors
+        "vault_missing": "Cofre não existe.",
+        "vault_corrupt": "Ih caralho, arquivo de cofre está corrompido.",
+        "vault_decrypt_failed": "PORRA!!! Cofre não pode ser aberto.",
+        "entry_exists": "Entrada '{name}' já existe.",
+        # edits
+        "vault_updated": "Senha mestre atualizada.",
+        "cmd_edit": "Editar uma entrada",
+        "editing_entry": "Editando entrada:",
+        "entry_updated": "Entrada '{name}' atualizada.",
+        "leave_empty": "deixe vazio para reter",
+        # argparse / help
+        "cmd_init": "Iniciar novo cofre",
+        "cmd_list": "Listar entradas",
+        "cmd_add": "Adicionar nova entrada",
+        "cmd_get": "Mostrar uma entrada",
+        "cmd_gen": "Gerar uma senha segura",
+        "cmd_rm": "Remover uma entrada",
+        "cmd_lang": "Selecionar língua",
+        "cmd_passwd": "Trocar senha mestre",
+        "arg_name": "Nome da entrada",
+        "arg_length": "Largura da senha (predefinição: 20)",
+        "arg_copy": "Copiar para área de transferência",
+        "arg_timeout": "Tempo de limpeza de área de transferência (predefinição: 15)",
+        # lang
+        "lang_set": "Língua definida para {lang}",
+    },
 }
 
 
